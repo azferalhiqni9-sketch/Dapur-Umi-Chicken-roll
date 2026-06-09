@@ -15,13 +15,13 @@
                     <p>Jl. Lkr. Utara<br>Tasikmalaya, West Java</p>
                     
                     <h4 class="text-danger mt-4"><i class="fas fa-clock me-2"></i> Jam Kerja</h4>
-                    <p>Senin – Minggu: 09.00 – 21.00</p>
+                    <p>Senin – Sabtu: 16.00 - 22.00 | Minggu: 06.00 - 11.30</p>
                     
                     <h4 class="text-danger mt-4"><i class="fas fa-envelope me-2"></i> Email</h4>
                     <p>dapurumichiro@gmail.com</p>
                     
                     <h4 class="text-danger mt-4"><i class="fas fa-phone me-2"></i> Telepon</h4>
-                    <p>+62 8xx-xxxx-xxxx</p>
+                    <p>+62 895-6345-86948</p>
                 </div>
             </div>
         </div>
@@ -30,24 +30,22 @@
             <div class="card bg-secondary border-0">
                 <div class="card-body">
                     <h4 class="card-title text-danger"><i class="fas fa-paper-plane me-2"></i> Kirim Pesan</h4>
-                    <form action="#" method="POST">
-                        @csrf
-                        <div class="mb-3">
-                            <label class="form-label">Nama</label>
-                            <input type="text" name="nama" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">No. WhatsApp</label>
-                            <input type="tel" name="wa" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Pesan</label>
-                            <textarea name="pesan" rows="4" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-danger w-100">
-                            <i class="fab fa-whatsapp me-2"></i>Kirim ke WhatsApp
-                        </button>
-                    </form>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Nama</label>
+                        <input type="text" id="nama" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">No. WhatsApp</label>
+                        <input type="tel" id="nowa" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Pesan</label>
+                        <textarea id="pesan" rows="4" class="form-control" required></textarea>
+                    </div>
+                    <button type="button" class="btn btn-danger w-100" onclick="kirimWA()">
+                        <i class="fab fa-whatsapp me-2"></i>Kirim ke WhatsApp
+                    </button>
                 </div>
             </div>
         </div>
@@ -69,4 +67,25 @@
         </div>
     </div>
 </div>
+
+<script>
+function kirimWA() {
+    const nama  = document.getElementById('nama').value.trim();
+    const nowa  = document.getElementById('nowa').value.trim();
+    const pesan = document.getElementById('pesan').value.trim();
+
+    if (!nama || !nowa || !pesan) {
+        alert('Mohon isi semua kolom terlebih dahulu!');
+        return;
+    }
+
+    const nomorToko = '6289563458648';
+
+    const teks = `Halo, saya *${nama}*\nNo. WA saya: ${nowa}\n\n${pesan}`;
+    const url  = `https://wa.me/${nomorToko}?text=${encodeURIComponent(teks)}`;
+
+    window.open(url, '_blank');
+}
+</script>
+
 @endsection
