@@ -10,10 +10,12 @@
         border-radius: 15px;
     }
 
-    .container {
-           background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ asset('img/menu.png') }}');
-           
-    }
+   .container {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ asset('img/menu.png') }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
     
     .menu-card:hover {
         transform: translateY(-10px);
