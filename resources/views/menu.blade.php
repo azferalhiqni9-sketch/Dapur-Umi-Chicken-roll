@@ -10,11 +10,16 @@
         border-radius: 15px;
     }
 
-.container {
+
+body, html {
+    margin: 0;
+    padding: 0;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ asset('img/menu.png') }}');
-    background-size: cover;  /* atau contain */
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;  /* INI YANG PENTING! */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* biar background tetap saat di-scroll */
+    min-height: 100vh;
 }
     
     .menu-card:hover {
