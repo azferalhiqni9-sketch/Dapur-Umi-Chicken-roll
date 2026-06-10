@@ -34,7 +34,7 @@
                 <!-- TAMPILKAN GAMBAR -->
             <!-- TAMPILKAN GAMBAR - VERSI BENAR -->
                 @if($menu->gambar && file_exists(public_path('images/menu/' . $menu->gambar)))
-                    <img src="{{ asset('images/menu/' . $menu->gambar) }}" 
+                    <img src="{{ asset('images/Hotang/' . $menu->gambar) }}" 
                         alt="{{ $menu->nama_menu }}" 
                         class="menu-img">
                 @else
