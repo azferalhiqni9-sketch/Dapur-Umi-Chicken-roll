@@ -32,14 +32,15 @@
         <div class="col-md-4">
             <div class="card bg-secondary text-white h-100 border-0 menu-card">
                 <!-- TAMPILKAN GAMBAR -->
-                @if($menu->gambar && file_exists(public_path($menu->gambar)))
-                    <img src="{{ asset($menu->gambar) }}" 
-                         alt="{{ $menu->nama_menu }}" 
-                         class="menu-img">
+            <!-- TAMPILKAN GAMBAR - VERSI BENAR -->
+                @if($menu->gambar && file_exists(public_path('images/menu/' . $menu->gambar)))
+                    <img src="{{ asset('images/menu/' . $menu->gambar) }}" 
+                        alt="{{ $menu->nama_menu }}" 
+                        class="menu-img">
                 @else
                     <img src="https://via.placeholder.com/400x200?text={{ urlencode($menu->nama_menu) }}" 
-                         alt="{{ $menu->nama_menu }}" 
-                         class="menu-img">
+                        alt="{{ $menu->nama_menu }}" 
+                        class="menu-img">
                 @endif
                 
                 <div class="card-body">
