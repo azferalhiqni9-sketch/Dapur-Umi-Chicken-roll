@@ -33,7 +33,7 @@
             <div class="card bg-secondary text-white h-100 border-0 menu-card">
                 <!-- TAMPILKAN GAMBAR -->
                 @if($menu->gambar && file_exists(public_path($menu->gambar)))
-                   <img src="{{ asset('images/menu.png/' . $menu->gambar) }}" ... > 
+                    <img src="{{ asset($menu->gambar) }}" 
                          alt="{{ $menu->nama_menu }}" 
                          class="menu-img">
                 @else
