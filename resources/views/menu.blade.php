@@ -9,6 +9,10 @@
         overflow: hidden;
         border-radius: 15px;
     }
+
+    .container {
+           background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ asset('img/menu.png') }}');
+    }
     
     .menu-card:hover {
         transform: translateY(-10px);
